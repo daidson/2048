@@ -1,8 +1,8 @@
 /***************************************************************************
- *   exN.h                                    Version 20160908.182854      *
+ *   ex2048.h                                 Version 20170503.224252      *
  *                                                                         *
- *   Brief description                                                     *
- *   Copyright (C) 2016         by Ruben Carlo Benante                     *
+ *   The 2048 game library                                                 *
+ *   Copyright (C) 2017         by Ruben Carlo Benante                     *
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -27,16 +27,16 @@
 
 /* ---------------------------------------------------------------------- */
 /**
- * \file exN.h
+ * \file 2048.h
  * \ingroup GroupUnique
- * \brief Brief description
+ * \brief The 2048 game library
  * \details This program really do a nice job as a template, and template only!
- * \version 20160908.182854
- * \date 2016-09-08
+ * \version 20170503.224252
+ * \date 2017-05-03
  * \author Ruben Carlo Benante <<rcb@beco.cc>>
  * \par Webpage
  * <<a href="www.beco.cc">www.beco.cc</a>>
- * \copyright (c) 2016 GNU GPL v2
+ * \copyright (c) 2017 GNU GPL v2
  * \note This program is free software: you can redistribute it
  * and/or modify it under the terms of the
  * GNU General Public License as published by
@@ -58,19 +58,18 @@
  *
  */
 
-#ifndef _EXN_H
-#define _EXN_H
+#ifndef _2048_H
+#define _2048_H
 
 /* ---------------------------------------------------------------------- */
 /* includes */
 
 /* #include <stdio.h> */ /* Standard I/O functions */
 /* #include <stdlib.h> */ /* Miscellaneous functions (rand, malloc, srand)*/
-/* #include <getopt.h> */ /* get options from system argc/argv */
-
 /* #include <time.h> */ /* Time and date functions */
-/* #include <math.h> */ /* Mathematics functions */
 /* #include <string.h> */ /* Strings functions definitions */
+/* #include <getopt.h> */ /* get options from system argc/argv */
+/* #include <math.h> */ /* Mathematics functions */
 /* #include <dlfcn.h> */ /* Dynamic library */
 /* #include <malloc.h> */ /* Dynamic memory allocation */
 /* #include <unistd.h> */ /* UNIX standard function */
@@ -92,13 +91,12 @@
 /* #include <libintl.h> */ /* Internationalization / translation */
 /* #include <locale.h> */ /* MACROS LC_ for location specific settings */
 /* #include "libeco.h" */ /* I/O, Math, Sound, Color, Portable Linux/Windows */
-/* #include "exN.h" */ /* To be created for this template if needed */
 
 /* ---------------------------------------------------------------------- */
 /* definitions */
 
 #ifndef VERSION /* gcc -DVERSION="0.1.160612.142628" */
-#define VERSION "20160908.182854" /**< Version Number (string) */
+#define VERSION "20170503.224252" /**< Version Number (string) */
 #endif
 
 /* Debug */
@@ -115,7 +113,7 @@
 #define IFDEBUG(M) if(DEBUG) fprintf(stderr, "[DEBUG file:%s line:%d]: " M "\n", __FILE__, __LINE__); else {;}
 
 /* limits */
-#define SBUFF 256 /**< String buffer */
+#define BS 4 /**< board size */
 
 /* ---------------------------------------------------------------------- */
 /* globals */
@@ -125,11 +123,19 @@ static int verb = 0; /**< verbose level, global within the file */
 /* ---------------------------------------------------------------------- */
 /* prototypes */
 
-void help(void); /**< Prints help information and exit */
-void copyr(void); /**< Prints copyright information and exit */
-void exN_init(void);  /**< Initializes some operations before start */
+void help(void); /* print some help */
+void copyr(void); /* print version and copyright information */
+void welcome(void); /* print a welcome message */
+void addtile(int bd[BS][BS]); /* add a tile */
+void print(int bd[BS][BS]); /* print the board */
+char getmove(int bd[BS][BS]); /* get the move 'u'p, 'd'own, 'l'eft, 'r'ight or '\0' if no moves left */
+int applymove(char m, int bd[BS][BS]); /* apply the move m to the board bd and return the partial score */
+void goodbye(int score); /* print the goodbye message and congratulations on the score */
 
-#endif /* NOT def _EXN_H */
+/* add more of your own prototypes here */
+
+
+#endif /* NOT def _2048_H */
 
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
