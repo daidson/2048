@@ -64,8 +64,8 @@
 /* ---------------------------------------------------------------------- */
 /* includes */
 
-/* #include <stdio.h> */ /* Standard I/O functions */
-/* #include <stdlib.h> */ /* Miscellaneous functions (rand, malloc, srand)*/
+#include <stdio.h> /* Standard I/O functions */
+#include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
 /* #include <time.h> */ /* Time and date functions */
 /* #include <string.h> */ /* Strings functions definitions */
 /* #include <getopt.h> */ /* get options from system argc/argv */
