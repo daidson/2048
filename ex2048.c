@@ -19,6 +19,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************
  *   To contact the author, please write to:                               *
+ *   Bernardo de Azevedo Moreira                                           * 
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 81                                                         *
+ *                                                                         *
+ *   Daidson Fonseca Alves                                                 * 
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 81                                                         *
+ *                                                                         *
+ *   Douglas Azevedo Pereira Dantas                                        * 
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 81                                                         *
+ *                                                                         *
+ *   Maria Eduarda Azevedo Saraiva de Moraes                               * 
+ *   Email: eduardasaraivam@gmail.com                                      *
+ *   Webpage: http://github.com/eduardasaraiva                             *
+ *   Phone: +55 81 99952-0347                                              *
+ *                                                                         *
  *   Ruben Carlo Benante                                                   *
  *   Email: rcb@beco.cc                                                    *
  *   Webpage: http://www.beco.cc                                           *
