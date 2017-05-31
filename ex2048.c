@@ -2,7 +2,7 @@
  *   ex2048.c                                 Version 20170503.222742      *
  *                                                                         *
  *   The 2048 game                                                         *
- *   Copyright (C) 2017         by Ruben Carlo Benante                     *
+ *   Copyright (C) 2017         by Group Azaleia                           *
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *

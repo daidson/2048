@@ -2,7 +2,7 @@
  *   ex2048.h                                 Version 20170503.224252      *
  *                                                                         *
  *   The 2048 game library                                                 *
- *   Copyright (C) 2017         by Ruben Carlo Benante                     *
+ *   Copyright (C) 2017         by Group Azaleia                           *
  ***************************************************************************
  *   This program is free software; you can redistribute it and/or modify  *
  *   it under the terms of the GNU General Public License as published by  *
@@ -19,6 +19,26 @@
  *   59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.             *
  ***************************************************************************
  *   To contact the author, please write to:                               *
+ *   Bernardo de Azevedo Moreira                                           *
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 (81)                                                       *
+ *                                                                         *
+ *   Daidson Fonseca Alves                                                 *
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 (81)                                                       *
+ *                                                                         *
+ *   Douglas Azevedo Pereira Dantas                                        *
+ *   Email:                                                                *
+ *   Webpage:                                                              *
+ *   Phone: +55 (81)                                                       *
+ *                                                                         *
+ *   Maria Eduarda Azevedo Saraiva de Moraes                               *
+ *   Email: eduardasaraivam@gmail.com                                      *
+ *   Webpage: https://github.com/eduardasaraiva                            *
+ *   Phone: +55 (81) 99952-0347                                            *
+ *                                                                         *
  *   Ruben Carlo Benante                                                   *
  *   Email: rcb@beco.cc                                                    *
  *   Webpage: www.beco.cc                                                  *
@@ -28,7 +48,7 @@
 /* ---------------------------------------------------------------------- */
 /**
  * \file 2048.h
- * \ingroup GroupUnique
+ * \ingroup Group Azaleia
  * \brief The 2048 game library
  * \details This program really do a nice job as a template, and template only!
  * \version 20170503.224252
@@ -50,11 +70,6 @@
  * If not, write to the Free Software Foundation, Inc.,
  * 59 Temple Place - Suite 330, Boston, MA. 02111-1307, USA.
  * Or read it online at <<http://www.gnu.org/licenses/>>.
- *
- *
- * \todo Now that you have the template, hands on! Programme!
- * \warning Be carefull not to lose your mind in small things.
- * \bug This file right now does nothing usefull
  *
  */
 
