@@ -78,7 +78,7 @@ void print(int bd[BS][BS])
     {
         for(column=0; column<BS; ++column)
             if (bd[line][column])
-                printf("|\t%d\t ", bd[i][j]);
+                printf("|\t%d\t ", bd[line][column]);
             else
                 printf("|\t  \t ");
         
@@ -87,7 +87,6 @@ void print(int bd[BS][BS])
 
     printf("Possible moves: udlr\n");
     printf("Next move: \n");
-    scanf("%s", &m);
     
     return;
 }
