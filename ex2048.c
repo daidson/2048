@@ -99,7 +99,7 @@ char getmove(int bd[BS][BS])
     in=getchar();
     while((clean=getchar()) != '\n' && clean != EOF);
 
-    switch(clean)
+    switch(in)
     {
         case 'u':
             return 'u';
