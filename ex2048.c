@@ -49,7 +49,6 @@
 /* includes */
 
 #include "ex2048.h" /* To be created for this template if needed */
-#include "exmain2048.c"
 
 /* ---------------------------------------------------------------------- */
 /* function bodies */
