@@ -95,7 +95,24 @@ void print(int bd[BS][BS])
 /* get the move 'u'p, 'd'own, 'l'eft, 'r'ight or '\0' if no moves left */
 char getmove(int bd[BS][BS])
 {
-    return '\0';
+    char in, clean;
+
+    in=getchar();
+    while((clean=getchar()) != '\n' && clean != EOF);
+
+    switch(clean)
+    {
+        case 'u':
+            return 'u';
+        case 'd':
+            return 'd';
+        case 'l':
+            return 'l';
+        case 'r':
+            return 'r';
+        default:
+            return '\0';
+    }
 }
 
 /* ---------------------------------------------------------------------- */
