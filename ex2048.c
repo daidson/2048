@@ -72,20 +72,20 @@ void addtile(int bd[BS][BS])
 void print(int bd[BS][BS])
 {
     int line=0, column=0;
-    char m;
 
-    for(line=0; line<BS; line++)
+    for(line=0; line<BS; ++line)
     {
-        for(column=0; column<BS; column++)
-        {
-            printf("    | ", bd[line][column]);
-        }
-        printf("\n\n");
+        for(column=0; column<BS; ++column)
+            if (bd[line][column])
+                printf("|\t%d\t ", bd[line][column]);
+            else
+                printf("|\t  \t ");
+        
+        printf("|\n");
     }
 
     printf("Possible moves: udlr\n");
     printf("Next move: \n");
-    scanf("%s", &m);
     
     return;
 }
