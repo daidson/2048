@@ -49,6 +49,7 @@
 /* includes */
 
 #include "ex2048.h" /* To be created for this template if needed */
+#include "exmain2048.c"
 
 /* ---------------------------------------------------------------------- */
 /* function bodies */
@@ -71,6 +72,22 @@ void addtile(int bd[BS][BS])
 /* print the board */
 void print(int bd[BS][BS])
 {
+    int line=0, column=0;
+    char m;
+
+    for(line=0; line<BS; line++)
+    {
+        for(column=0; column<BS; column++)
+        {
+            printf("    | ", bd[line][column]);
+        }
+        printf("\n\n");
+    }
+
+    printf("Possible moves: udlr\n");
+    printf("Next move: \n");
+    scanf("%s", &m);
+    
     return;
 }
 

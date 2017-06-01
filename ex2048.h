@@ -131,11 +131,6 @@
 #define BS 4 /**< board size */
 
 /* ---------------------------------------------------------------------- */
-/* globals */
-
-static int verb = 0; /**< verbose level, global within the file */
-
-/* ---------------------------------------------------------------------- */
 /* prototypes */
 
 void help(void); /* print some help */
