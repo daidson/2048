@@ -83,9 +83,6 @@ void print(int bd[BS][BS])
         
         printf("|\n");
     }
-
-    printf("Possible moves: udlr\n");
-    printf("Next move: \n");
     
     return;
 }
@@ -95,6 +92,9 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
+
+    printf("Possible moves: udlr\n");
+    printf("Next move: \n");
 
     in=getchar();
     while((clean=getchar()) != '\n' && clean != EOF);
