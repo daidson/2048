@@ -92,26 +92,32 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
+    int valid = 0;
 
     printf("Possible moves: udlr\n");
     printf("Next move: \n");
 
-    in=getchar();
-    while((clean=getchar()) != '\n' && clean != EOF);
-
-    switch(in)
+    while(!valid)
     {
-        case 'u':
-            return 'u';
-        case 'd':
-            return 'd';
-        case 'l':
-            return 'l';
-        case 'r':
-            return 'r';
-        default:
-            return '\0';
+        in=getchar();
+        while((clean=getchar()) != '\n' && clean != EOF);
+        
+        switch(in)
+        {
+            case 'u':
+                return 'u';
+            case 'd':
+                return 'd';
+            case 'l':
+                return 'l';
+            case 'r':
+                return 'r';
+            default:
+                printf("Entrada invalida.\n");
+        }
     }
+    
+    return '\0';
 }
 
 /* ---------------------------------------------------------------------- */
