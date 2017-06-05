@@ -81,10 +81,10 @@
 
 #include <stdio.h> /* Standard I/O functions */
 #include <stdlib.h> /* Miscellaneous functions (rand, malloc, srand)*/
-/* #include <time.h> */ /* Time and date functions */
+#include <time.h> /* Time and date functions */
 /* #include <string.h> */ /* Strings functions definitions */
 /* #include <getopt.h> */ /* get options from system argc/argv */
-/* #include <math.h> */ /* Mathematics functions */
+#include <math.h> /* Mathematics functions */
 /* #include <dlfcn.h> */ /* Dynamic library */
 /* #include <malloc.h> */ /* Dynamic memory allocation */
 /* #include <unistd.h> */ /* UNIX standard function */
