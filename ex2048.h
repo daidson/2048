@@ -143,8 +143,11 @@ int applymove(char m, int bd[BS][BS]); /* apply the move m to the board bd and r
 void goodbye(int score); /* print the goodbye message and congratulations on the score */
 
 /* add more of your own prototypes here */
-int validmove(char m, int bd[BS][BS]); /* move validation function */
-
+int validmove(char m, int bd[BS][BS]); /* move validation */
+int validleft(int bd[BS][BS]);
+int validright(int bd[BS][BS]);
+int validup(int bd[BS][BS]);
+int validdown(int bd[BS][BS]);
 
 #endif /* NOT def _2048_H */
 

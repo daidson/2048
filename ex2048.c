@@ -167,11 +167,42 @@ void copyr(void)
 /* add more of your own functions here */
 int validmove(char m, int bd[BS][BS])
 {
+    switch(m)
+    {
+        case 'l':
+            if (validleft(bd))
+                return 1;
+        case 'r':
+            if (validright(bd))
+                return 1;
+        case 'u':
+            if (validup(bd))
+                return 1;
+        case 'd':
+            if (validdown(bd))
+                return 1;
+    }
+}
+
+int validleft(int bd[BS][BS])
+{
     return 1;
 }
 
+int validright(int bd[BS][BS])
+{
+    return 1;
+}
 
+int validup(int bd[BS][BS])
+{
+    return 1;
+}
 
+int validdown(int bd[BS][BS])
+{
+    return 1;
+}
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
 /* Template by Dr. Beco <rcb at beco dot cc> Version 20160612.142044      */
