@@ -165,6 +165,10 @@ void copyr(void)
 
 /* ---------------------------------------------------------------------- */
 /* add more of your own functions here */
+int validmove(char m, int bd[BS][BS])
+{
+    return 1;
+}
 
 
 

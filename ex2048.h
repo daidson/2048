@@ -20,9 +20,9 @@
  ***************************************************************************
  *   To contact the author, please write to:                               *
  *   Bernardo de Azevedo Moreira                                           *
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 (81)                                                       *
+ *   Email: bernardo.az.moreira@gmail.com                                  *
+ *   Webpage: github.com/BAMoreira                                         *
+ *   Phone: +55 (81) 99145-9271                                            *
  *                                                                         *
  *   Daidson Fonseca Alves                                                 *
  *   Email:                                                                *
@@ -143,6 +143,7 @@ int applymove(char m, int bd[BS][BS]); /* apply the move m to the board bd and r
 void goodbye(int score); /* print the goodbye message and congratulations on the score */
 
 /* add more of your own prototypes here */
+int validmove(char m, int bd[BS][BS]); /* move validation function */
 
 
 #endif /* NOT def _2048_H */
