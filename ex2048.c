@@ -207,7 +207,21 @@ int validleft(int bd[BS][BS])
 
 int validright(int bd[BS][BS])
 {
-    return 1;
+    int r, c;
+    int curnt = 0;
+    int oldt = 0;
+
+    for (r = 0; r < BS; ++r)
+        for (c = BS-1; c >= 0; ++c)
+        {
+            curnt = bd[r][c];
+            if(curnt & oldt)
+                return 1;
+            else
+                oldt = curnt;
+        }
+
+    return 0;
 }
 
 int validup(int bd[BS][BS])
