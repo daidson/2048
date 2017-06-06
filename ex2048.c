@@ -175,6 +175,8 @@ char getmove(int bd[BS][BS])
 /* apply the move m to the board bd and return the partial score */
 int applymove(char m, int bd[BS][BS])
 {
+    if (m == 'r')
+        return applyright(bd);
     return 0;
 }
 int applyright(int bd[BS][BS])
@@ -182,9 +184,40 @@ int applyright(int bd[BS][BS])
     int a = 0;
     int r, c;
     int diff;
+    int last;
     for (r = 0; r < BS; ++r)
-        for (c = BS - 1; c >= 0; --c);
-
+    {
+        diff = 0;
+        last = 0;
+        printf("test\n");
+        for (c = (BS-1); c >= 0; --c)
+        {
+            printf("%d\n",c);
+            /* movement */
+            if (bd[r][c])
+            {
+                if (bd[r][c] & last)
+                {
+                    bd[r][c] *= 2;
+                    a += bd[r][c];
+                    ++diff;
+                    last = 0;
+                }
+                else
+                    last = bd[r][c];
+                if (diff)
+                {
+                    bd[r][c+diff] = bd[r][c];
+                    bd[r][c] = 0;
+                    diff = 0;
+                }
+            }
+            else
+                ++diff;
+        }
+    }
+ 
+    return a;
 }
 
 
@@ -255,7 +288,7 @@ int validright(int bd[BS][BS])
     int i;
 
     for (r = 0; r < BS; ++r)
-        for (c = BS-1; c >= 0; --c)
+        for (c = (BS-1); c >= 0; --c)
         {
             curnt = bd[r][c];
             if(curnt & oldt)
