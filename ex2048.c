@@ -1,5 +1,5 @@
 /***************************************************************************
- *   ex2048.c                                 Version 20170503.222742      *
+ *   ex2048.c                                 Version 20170606.201555      *
  *                                                                         *
  *   The 2048 game                                                         *
  *   Copyright (C) 2017         by Group Azaleia                           *
@@ -20,9 +20,9 @@
  ***************************************************************************
  *   To contact the author, please write to:                               *
  *   Bernardo de Azevedo Moreira                                           * 
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 81                                                         *
+ *   Email: bernardo.az.moreira@gmail.com                                  *
+ *   Webpage: https://github.com/BAMoreira                                 *
+ *   Phone: +55 81 99145-9271                                              *
  *                                                                         *
  *   Daidson Fonseca Alves                                                 * 
  *   Email:                                                                *
@@ -110,13 +110,13 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
-    char valu = 0;
+    /*char valu = 0;
     char vald = 0;
-    char vall = 0;
+    char vall = 0;*/
     char valr = 0;
 
     printf("Next move (");
-    if(validmove('u',bd))
+    /*if(validmove('u',bd))
     {
         valu = 1;
         putchar('u');
@@ -130,7 +130,7 @@ char getmove(int bd[BS][BS])
     {
         vall = 1;
         putchar('l');
-    }
+    }*/
     if(validmove('r',bd))
     {
         valr = 1;
@@ -138,7 +138,7 @@ char getmove(int bd[BS][BS])
     }
     printf("): \n");
     
-    if (!(valu||vald||vall||valr))
+    if (!(/*valu||vald||vall||*/valr))
         return '\0';
 
     while(1)
@@ -148,7 +148,7 @@ char getmove(int bd[BS][BS])
         
         switch(in)
         {
-            case 'u':
+            /*case 'u':
                 if (valu)
                     return 'u';
                 break;
@@ -159,7 +159,7 @@ char getmove(int bd[BS][BS])
             case 'l':
                 if (vall)
                     return 'l';
-                break;
+                break;*/
             case 'r':
                 if (valr)
                     return 'r';
@@ -264,22 +264,22 @@ int validmove(char m, int bd[BS][BS])
 {
     switch(m)
     {
-        case 'l':
-            return validleft(bd);
-        case 'r':
-            return validright(bd);
-        case 'u':
+        /*case 'u':
             return validup(bd);
         case 'd':
             return validdown(bd);
+        case 'l':
+            return validleft(bd);*/
+        case 'r':
+            return validright(bd);
     }
     return 0;
 }
 
-int validleft(int bd[BS][BS])
+/*int validleft(int bd[BS][BS])
 {
     return 0;
-}
+}*/
 
 int validright(int bd[BS][BS])
 {
@@ -304,7 +304,7 @@ int validright(int bd[BS][BS])
 
     return 0;
 }
-
+/*
 int validup(int bd[BS][BS])
 {
     return 0;
@@ -314,6 +314,7 @@ int validdown(int bd[BS][BS])
 {
     return 0;
 }
+*/
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
 /* Template by Dr. Beco <rcb at beco dot cc> Version 20160612.142044      */

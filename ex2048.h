@@ -1,5 +1,5 @@
 /***************************************************************************
- *   ex2048.h                                 Version 20170503.224252      *
+ *   ex2048.h                                 Version 20170606.201555      *
  *                                                                         *
  *   The 2048 game library                                                 *
  *   Copyright (C) 2017         by Group Azaleia                           *
@@ -51,8 +51,8 @@
  * \ingroup Group Azaleia
  * \brief The 2048 game library
  * \details This program really do a nice job as a template, and template only!
- * \version 20170503.224252
- * \date 2017-05-03
+ * \version 20170606.201555
+ * \date 2017-06-06
  * \author Ruben Carlo Benante <<rcb@beco.cc>>
  * \par Webpage
  * <<a href="www.beco.cc">www.beco.cc</a>>
@@ -110,8 +110,8 @@
 /* ---------------------------------------------------------------------- */
 /* definitions */
 
-#ifndef VERSION /* gcc -DVERSION="0.1.160612.142628" */
-#define VERSION "20170503.224252" /**< Version Number (string) */
+#ifndef VERSION /* gcc -DVERSION="1.0.160612.142628" */
+#define VERSION "20170606.201555" /**< Version Number (string) */
 #endif
 
 /* Debug */
@@ -145,10 +145,10 @@ void goodbye(int score); /* print the goodbye message and congratulations on the
 
 /* add more of your own prototypes here */
 int validmove(char m, int bd[BS][BS]); /* move validation */
-int validleft(int bd[BS][BS]);
-int validright(int bd[BS][BS]);
-int validup(int bd[BS][BS]);
+/*int validup(int bd[BS][BS]);
 int validdown(int bd[BS][BS]);
+int validleft(int bd[BS][BS]);*/
+int validright(int bd[BS][BS]);
 
 #endif /* NOT def _2048_H */
 
