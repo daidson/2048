@@ -64,7 +64,25 @@ void welcome(void)
 /* add a tile */
 void addtile(int bd[BS][BS])
 {
-    return;
+    time_t seed;
+    int r, c, tile;
+    
+    srand((unsigned) time(&seed));
+    while(1)
+    {
+        r=rand()%BS;
+        c=rand()%BS;
+
+        if (!bd[r][c])
+        {
+            if (rand()%10)
+                tile=2;
+            else
+                tile=4;
+            bd[r][c]=tile;
+            return;
+        }
+    }
 }
 
 /* ---------------------------------------------------------------------- */
