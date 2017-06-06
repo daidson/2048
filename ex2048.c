@@ -210,6 +210,7 @@ int validright(int bd[BS][BS])
     int r, c;
     int curnt = 0;
     int oldt = 0;
+    int i;
 
     for (r = 0; r < BS; ++r)
         for (c = BS-1; c >= 0; ++c)
@@ -217,8 +218,12 @@ int validright(int bd[BS][BS])
             curnt = bd[r][c];
             if(curnt & oldt)
                 return 1;
-            else
-                oldt = curnt;
+            
+            oldt = curnt;
+            if (!bd[r][c])
+                for (i = c - 1; i >= 0; i++)
+                    if (bd[r][i])
+                        return 1;
         }
 
     return 0;
