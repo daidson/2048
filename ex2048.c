@@ -203,6 +203,7 @@ int validmove(char m, int bd[BS][BS])
         case 'd':
             return validdown(bd);
     }
+    return 0;
 }
 
 int validleft(int bd[BS][BS])
