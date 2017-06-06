@@ -223,6 +223,9 @@ int applyright(int bd[BS][BS])
 /* print the goodbye message and congratulations on the score */
 void goodbye(int score)
 {
+    printf("You lose!\n");
+    printf("Score: %d\n", score);
+    printf("Try again later.\n");
     return;
 }
 
