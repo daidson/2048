@@ -137,6 +137,9 @@ char getmove(int bd[BS][BS])
         putchar('r');
     }
     printf("): \n");
+    
+    if (!(valu||vald||vall||valr))
+        return '\0';
 
     while(1)
     {
@@ -166,7 +169,6 @@ char getmove(int bd[BS][BS])
         printf("Entrada invalida.\n");
     }
     
-    return '\0';
 }
 
 /* ---------------------------------------------------------------------- */
@@ -175,6 +177,16 @@ int applymove(char m, int bd[BS][BS])
 {
     return 0;
 }
+int applyright(int bd[BS][BS])
+{
+    int a = 0;
+    int r, c;
+    int diff;
+    for (r = 0; r < BS; ++r)
+        for (c = BS - 1; c >= 0; --c);
+
+}
+
 
 /* ---------------------------------------------------------------------- */
 /* print the goodbye message and congratulations on the score */
@@ -243,15 +255,15 @@ int validright(int bd[BS][BS])
     int i;
 
     for (r = 0; r < BS; ++r)
-        for (c = BS-1; c >= 0; ++c)
+        for (c = BS-1; c >= 0; --c)
         {
             curnt = bd[r][c];
             if(curnt & oldt)
                 return 1;
-            
+
             oldt = curnt;
             if (!bd[r][c])
-                for (i = c - 1; i >= 0; i++)
+                for (i = c - 1; i >= 0; i--)
                     if (bd[r][i])
                         return 1;
         }

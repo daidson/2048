@@ -140,6 +140,7 @@ void addtile(int bd[BS][BS]); /* add a tile */
 void print(int bd[BS][BS]); /* print the board */
 char getmove(int bd[BS][BS]); /* get the move 'u'p, 'd'own, 'l'eft, 'r'ight or '\0' if no moves left */
 int applymove(char m, int bd[BS][BS]); /* apply the move m to the board bd and return the partial score */
+int applyright(int bd[BS][BS]);
 void goodbye(int score); /* print the goodbye message and congratulations on the score */
 
 /* add more of your own prototypes here */
