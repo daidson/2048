@@ -110,12 +110,10 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
-    int valid = 0;
 
-    printf("Possible moves: udlr\n");
     printf("Next move: \n");
 
-    while(!valid)
+    while(1)
     {
         in=getchar();
         while((clean=getchar()) != '\n' && clean != EOF);
