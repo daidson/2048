@@ -111,7 +111,16 @@ char getmove(int bd[BS][BS])
 {
     char in, clean;
 
-    printf("Next move: \n");
+    printf("Next move (");
+    if(validmove('u',bd))
+        putchar('u');
+    if(validmove('d',bd))
+        putchar('d');
+    if(validmove('l',bd))
+        putchar('l');
+    if(validmove('r',bd))
+        putchar('r');
+    printf("): \n");
 
     while(1)
     {
@@ -186,23 +195,19 @@ int validmove(char m, int bd[BS][BS])
     switch(m)
     {
         case 'l':
-            if (validleft(bd))
-                return 1;
+            return validleft(bd);
         case 'r':
-            if (validright(bd))
-                return 1;
+            return validright(bd);
         case 'u':
-            if (validup(bd))
-                return 1;
+            return validup(bd);
         case 'd':
-            if (validdown(bd))
-                return 1;
+            return validdown(bd);
     }
 }
 
 int validleft(int bd[BS][BS])
 {
-    return 1;
+    return 0;
 }
 
 int validright(int bd[BS][BS])
@@ -231,12 +236,12 @@ int validright(int bd[BS][BS])
 
 int validup(int bd[BS][BS])
 {
-    return 1;
+    return 0;
 }
 
 int validdown(int bd[BS][BS])
 {
-    return 1;
+    return 0;
 }
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
