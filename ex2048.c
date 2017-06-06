@@ -189,10 +189,8 @@ int applyright(int bd[BS][BS])
     {
         diff = 0;
         last = 0;
-        printf("test\n");
         for (c = (BS-1); c >= 0; --c)
         {
-            printf("%d\n",c);
             /* movement */
             if (bd[r][c])
             {
