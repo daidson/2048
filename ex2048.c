@@ -110,16 +110,32 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
+    char valu = 0;
+    char vald = 0;
+    char vall = 0;
+    char valr = 0;
 
     printf("Next move (");
     if(validmove('u',bd))
+    {
+        valu = 1;
         putchar('u');
+    }
     if(validmove('d',bd))
+    {
+        vald = 1;
         putchar('d');
+    }
     if(validmove('l',bd))
+    {
+        vall = 1;
         putchar('l');
+    }
     if(validmove('r',bd))
+    {
+        valr = 1;
         putchar('r');
+    }
     printf("): \n");
 
     while(1)
@@ -130,16 +146,24 @@ char getmove(int bd[BS][BS])
         switch(in)
         {
             case 'u':
-                return 'u';
+                if (valu)
+                    return 'u';
+                break;
             case 'd':
-                return 'd';
+                if (vald)
+                    return 'd';
+                break;
             case 'l':
-                return 'l';
+                if (vall)
+                    return 'l';
+                break;
             case 'r':
-                return 'r';
-            default:
-                printf("Entrada invalida.\n");
+                if (valr)
+                    return 'r';
+                break;
         }
+
+        printf("Entrada invalida.\n");
     }
     
     return '\0';
