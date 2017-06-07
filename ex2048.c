@@ -183,11 +183,11 @@ int applyright(int bd[BS][BS])
 {
     int a = 0;
     int r, c;
-    int diff;
+    int zerocount;
     int last;
     for (r = 0; r < BS; ++r)
     {
-        diff = 0;
+        zerocount = 0;
         last = 0;
         for (c = (BS-1); c >= 0; --c)
         {
@@ -198,19 +198,19 @@ int applyright(int bd[BS][BS])
                 {
                     bd[r][c] *= 2;
                     a += bd[r][c];
-                    ++diff;
+                    ++zerocount;
                     last = 0;
                 }
                 else
                     last = bd[r][c];
-                if (diff)
+                if (zerocount)
                 {
-                    bd[r][c+diff] = bd[r][c];
+                    bd[r][c+zerocount] = bd[r][c];
                     bd[r][c] = 0;
                 }
             }
             else
-                ++diff;
+                ++zerocount;
         }
     }
  
