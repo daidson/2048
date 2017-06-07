@@ -207,7 +207,6 @@ int applyright(int bd[BS][BS])
                 {
                     bd[r][c+diff] = bd[r][c];
                     bd[r][c] = 0;
-                    diff = 0;
                 }
             }
             else
