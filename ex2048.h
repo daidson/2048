@@ -145,11 +145,9 @@ int applyleft(int bd[BS][BS]);
 int applydown(int bd[BS][BS]);
 int applyup(int bd[BS][BS]);
 void goodbye(int score); /* print the goodbye message and congratulations on the score */
-
-/* add more of your own prototypes here */
 int validmove(char m, int bd[BS][BS]); /* move validation */
-/*int validup(int bd[BS][BS]);
-int validdown(int bd[BS][BS]);i*/
+int validup(int bd[BS][BS]);
+int validdown(int bd[BS][BS]);i
 int validleft(int bd[BS][BS]);
 int validright(int bd[BS][BS]);
 
