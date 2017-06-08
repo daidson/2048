@@ -30,9 +30,9 @@
  *   Phone: +55 (81)                                                       *
  *                                                                         *
  *   Douglas Azevedo Pereira Dantas                                        *
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 (81)                                                       *
+ *   Email: douglasazvedo839@gmail.com                                     *
+ *   Webpage: https://github.com/DodoAz                                    *
+ *   Phone: +55 (81) 99158-2473                                             *
  *                                                                         *
  *   Maria Eduarda Azevedo Saraiva de Moraes                               *
  *   Email: eduardasaraivam@gmail.com                                      *
@@ -146,8 +146,8 @@ void goodbye(int score); /* print the goodbye message and congratulations on the
 /* add more of your own prototypes here */
 int validmove(char m, int bd[BS][BS]); /* move validation */
 /*int validup(int bd[BS][BS]);
-int validdown(int bd[BS][BS]);
-int validleft(int bd[BS][BS]);*/
+int validdown(int bd[BS][BS]);i*/
+int validleft(int bd[BS][BS]);
 int validright(int bd[BS][BS]);
 
 #endif /* NOT def _2048_H */
