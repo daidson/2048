@@ -110,13 +110,13 @@ void print(int bd[BS][BS])
 char getmove(int bd[BS][BS])
 {
     char in, clean;
-    /*char valu = 0;
-    char vald = 0;*/
+    char valu = 0;
+    char vald = 0;
     char vall = 0;
     char valr = 0;
 
     printf("Next move (");
-    /*if(validmove('u',bd))
+    if(validmove('u',bd))
     {
         valu = 1;
         putchar('u');
@@ -125,7 +125,7 @@ char getmove(int bd[BS][BS])
     {
         vald = 1;
         putchar('d');
-    }*/
+    }
     if(validmove('l',bd))
     {
         vall = 1;
