@@ -30,9 +30,9 @@
  *   Phone: +55 81                                                         *
  *                                                                         *
  *   Douglas Azevedo Pereira Dantas                                        * 
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 81                                                         *
+ *   Email: douglasazevedo839@gmail.com                                    *
+ *   Webpage: https://github.com/DodoAz                                    *
+ *   Phone: +55 81 99158-2473                                              *
  *                                                                         *
  *   Maria Eduarda Azevedo Saraiva de Moraes                               * 
  *   Email: eduardasaraivam@gmail.com                                      *
