@@ -25,9 +25,9 @@
  *   Phone: +55 (81) 99145-9271                                            *
  *                                                                         *
  *   Daidson Fonseca Alves                                                 *
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 (81)                                                       *
+ *   Email: daidson.alves@gmail.com                                        *
+ *   Webpage: https://github.com/daidson                                   *
+ *   Phone: +55 (81) 99954-6310                                            *
  *                                                                         *
  *   Douglas Azevedo Pereira Dantas                                        *
  *   Email: douglasazvedo839@gmail.com                                     *
