@@ -179,6 +179,8 @@ int applymove(char m, int bd[BS][BS])
         return applyright(bd);
     if (m == 'l')
         return applyleft(bd);
+    if (m == 'd')
+        return applydown(bd);
     return 0;
 }
 int applyright(int bd[BS][BS])
