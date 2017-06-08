@@ -375,12 +375,31 @@ int validright(int bd[BS][BS])
 
     return 0;
 }
-/*
+
 int validup(int bd[BS][BS])
 {
+    int r, c;
+    int curnt = 0;
+    int oldt = 0;
+    int i;
+
+    for (c = 0; c < BS; ++c)
+        for (r = 0; r < BS; ++r)
+        {
+            curnt = bd[r][c];
+            if(curnt & oldt)
+                return 1;
+
+            oldt = curnt;
+            if (!bd[r][c])
+                for (i = r + 1; i < BS; i++)
+                    if (bd[i][c])
+                        return 1;
+        }
+
     return 0;
 }
-
+/*
 int validdown(int bd[BS][BS])
 {
     return 0;
