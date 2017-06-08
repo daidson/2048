@@ -224,6 +224,50 @@ int applyright(int bd[BS][BS])
     return a;
 }
 
+int applyleft(int bd[BS][BS])
+{
+    int a = 0;      /* score */
+    int r, c;       /* rows and columns for loop */
+    int zerocount;  /* variable to store the amount of zeros scanned */
+    int last;       /* stores last valid scanned number */
+    
+    for (r = 0; r < BS; ++r)
+    {
+        zerocount = 0;  /* reset the count */
+        last = 0;       /* reset the last read number */
+        for (c = 0; c < BS; ++c)
+        {
+            if (bd[r][c])   /* if the tile is not empty */
+            {
+                if (bd[r][c] & last)    /* if the current number is fuse-able
+                                           with the last valid number(equal&not 0) */
+                {
+                    bd[r][c] *= 2;      /* doubles the tile's number to represent fusion */
+                    a += bd[r][c];      /* score setting */
+
+                    ++zerocount;        /* a fusion makes an empty slot, and this sets the
+                                           move code to replace the fused number */
+                    
+                    last = 0;           /* stops double-fusing by disabling fusions on the
+                                           next scan */
+                }
+                else
+                    last = bd[r][c];    /* update the last scan after a failed fusion */
+                
+                if (zerocount)          /* if there are zeroes before the current number
+                                           it needs to be moved */
+                {
+                    bd[r][c-zerocount] = bd[r][c];  /* moves the number to the last zero */
+                    bd[r][c] = 0;                   /* and replces the previous tile with 0 */
+                }
+            }
+            else
+                ++zerocount;            /* adds to the zero-counter after finding an empty tile */
+        }
+    }
+
+    return a;
+}
 
 /* ---------------------------------------------------------------------- */
 /* print the goodbye message and congratulations on the score */
