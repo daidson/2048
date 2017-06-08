@@ -399,12 +399,31 @@ int validup(int bd[BS][BS])
 
     return 0;
 }
-/*
+
 int validdown(int bd[BS][BS])
 {
+    int r, c;
+    int curnt = 0;
+    int oldt = 0;
+    int i;
+
+    for (c = 0; c < BS; ++c)
+        for (r = (BS - 1); r >= 0; --r)
+        {
+            curnt = bd[r][c];
+            if(curnt & oldt)
+                return 1;
+
+            oldt = curnt;
+            if (!bd[r][c])
+                for (i = r - 1; i >= 0; i--)
+                    if (bd[i][c])
+                        return 1;
+        }
+
     return 0;
 }
-*/
+
 /* ---------------------------------------------------------------------- */
 /* vi: set ai et ts=4 sw=4 tw=0 wm=0 fo=croql : C config for Vim modeline */
 /* Template by Dr. Beco <rcb at beco dot cc> Version 20160612.142044      */
