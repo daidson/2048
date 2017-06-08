@@ -30,9 +30,9 @@
  *   Phone: +55 81                                                         *
  *                                                                         *
  *   Douglas Azevedo Pereira Dantas                                        * 
- *   Email:                                                                *
- *   Webpage:                                                              *
- *   Phone: +55 81                                                         *
+ *   Email: douglasazevedo839@gmail.com                                    *
+ *   Webpage: https://github.com/DodoAz                                    *
+ *   Phone: +55 81 99158-2473                                              *
  *                                                                         *
  *   Maria Eduarda Azevedo Saraiva de Moraes                               * 
  *   Email: eduardasaraivam@gmail.com                                      *
@@ -111,8 +111,8 @@ char getmove(int bd[BS][BS])
 {
     char in, clean;
     /*char valu = 0;
-    char vald = 0;
-    char vall = 0;*/
+    char vald = 0;*/
+    char vall = 0;
     char valr = 0;
 
     printf("Next move (");
@@ -125,12 +125,12 @@ char getmove(int bd[BS][BS])
     {
         vald = 1;
         putchar('d');
-    }
+    }*/
     if(validmove('l',bd))
     {
         vall = 1;
         putchar('l');
-    }*/
+    }
     if(validmove('r',bd))
     {
         valr = 1;
@@ -138,7 +138,7 @@ char getmove(int bd[BS][BS])
     }
     printf("): \n");
     
-    if (!(/*valu||vald||vall||*/valr))
+    if (!(/*valu||vald||*/vall||valr))
         return '\0';
 
     while(1)
@@ -155,11 +155,11 @@ char getmove(int bd[BS][BS])
             case 'd':
                 if (vald)
                     return 'd';
-                break;
+                break;*/
             case 'l':
                 if (vall)
                     return 'l';
-                break;*/
+                break;
             case 'r':
                 if (valr)
                     return 'r';
@@ -273,19 +273,38 @@ int validmove(char m, int bd[BS][BS])
         /*case 'u':
             return validup(bd);
         case 'd':
-            return validdown(bd);
+            return validdown(bd);*/
         case 'l':
-            return validleft(bd);*/
+            return validleft(bd);
         case 'r':
             return validright(bd);
     }
     return 0;
 }
 
-/*int validleft(int bd[BS][BS])
+int validleft(int bd[BS][BS])
 {
+    int r, c;
+    int curnt = 0;
+    int oldt = 0;
+    int i;
+
+    for (r = 0; r < BS; ++r)
+        for (c = 0; c < BS; ++c)
+        {
+            curnt = bd[r][c];
+            if(curnt & oldt)
+                return 1;
+
+            oldt = curnt;
+            if(!bd[r][c])
+                for (i = c + 1; i < BS; i++)
+                    if (bd[r][i])
+                        return 1;
+        }
+
     return 0;
-}*/
+}
 
 int validright(int bd[BS][BS])
 {
