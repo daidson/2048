@@ -142,6 +142,8 @@ char getmove(int bd[BS][BS]); /* get the move 'u'p, 'd'own, 'l'eft, 'r'ight or '
 int applymove(char m, int bd[BS][BS]); /* apply the move m to the board bd and return the partial score */
 int applyright(int bd[BS][BS]);
 int applyleft(int bd[BS][BS]);
+int applydown(int bd[BS][BS]);
+int applyup(int bd[BS][BS]);
 void goodbye(int score); /* print the goodbye message and congratulations on the score */
 
 /* add more of your own prototypes here */
