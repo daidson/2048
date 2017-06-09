@@ -138,7 +138,7 @@ char getmove(int bd[BS][BS])
     }
     printf("): \n");
     
-    if (!(/*valu||vald||*/vall||valr))
+    if (!(valu||vald||vall||valr))
         return '\0';
 
     while(1)
@@ -148,14 +148,14 @@ char getmove(int bd[BS][BS])
         
         switch(in)
         {
-            /*case 'u':
+            case 'u':
                 if (valu)
                     return 'u';
                 break;
             case 'd':
                 if (vald)
                     return 'd';
-                break;*/
+                break;
             case 'l':
                 if (vall)
                     return 'l';
