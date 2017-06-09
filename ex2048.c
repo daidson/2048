@@ -430,6 +430,8 @@ int validleft(int bd[BS][BS])
     int i;
 
     for (r = 0; r < BS; ++r)
+    {
+        oldt = 0;
         for (c = 0; c < BS; ++c)
         {
             curnt = bd[r][c];
@@ -442,7 +444,7 @@ int validleft(int bd[BS][BS])
                     if (bd[r][i])
                         return 1;
         }
-
+    }
     return 0;
 }
 
@@ -454,6 +456,8 @@ int validright(int bd[BS][BS])
     int i;
 
     for (r = 0; r < BS; ++r)
+    {
+        oldt = 0;
         for (c = (BS-1); c >= 0; --c)
         {
             curnt = bd[r][c];
@@ -466,7 +470,7 @@ int validright(int bd[BS][BS])
                     if (bd[r][i])
                         return 1;
         }
-
+    }
     return 0;
 }
 
@@ -478,6 +482,8 @@ int validup(int bd[BS][BS])
     int i;
 
     for (c = 0; c < BS; ++c)
+    {
+        oldt = 0;
         for (r = 0; r < BS; ++r)
         {
             curnt = bd[r][c];
@@ -490,7 +496,7 @@ int validup(int bd[BS][BS])
                     if (bd[i][c])
                         return 1;
         }
-
+    }
     return 0;
 }
 
@@ -502,6 +508,8 @@ int validdown(int bd[BS][BS])
     int i;
 
     for (c = 0; c < BS; ++c)
+    {
+        oldt = 0;
         for (r = (BS - 1); r >= 0; --r)
         {
             curnt = bd[r][c];
@@ -514,7 +522,7 @@ int validdown(int bd[BS][BS])
                     if (bd[i][c])
                         return 1;
         }
-
+    }
     return 0;
 }
 
