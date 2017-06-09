@@ -308,7 +308,7 @@ int applydown(int bd[BS][BS])
                 if (zerocount)          /* if there are zeroes before the current number
                                            it needs to be moved */
                 {
-                    bd[r][c+zerocount] = bd[r][c];  /* moves the number to the last zero */
+                    bd[r+zerocount][c] = bd[r][c];  /* moves the number to the last zero */
                     bd[r][c] = 0;                   /* and replces the previous tile with 0 */
                 }
             }
@@ -353,7 +353,7 @@ int applyup(int bd[BS][BS])
                 if (zerocount)          /* if there are zeroes before the current number
                                            it needs to be moved */
                 {
-                    bd[r][c-zerocount] = bd[r][c];  /* moves the number to the last zero */
+                    bd[r-zerocount][c] = bd[r][c];  /* moves the number to the last zero */
                     bd[r][c] = 0;                   /* and replces the previous tile with 0 */
                 }
             }
