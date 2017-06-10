@@ -199,7 +199,7 @@ char getmove(int bd[BS][BS])
                 break;
         }
 
-        printf("Entrada invalida.\n");
+        printf("Invalid Input.\n");
     }
     
 }
