@@ -66,23 +66,31 @@ void addtile(int bd[BS][BS])
 {
     time_t seed;
     int r, c, tile;
-    
-    srand((unsigned) time(&seed));
-    while(1)
-    {
-        r=rand()%BS;
-        c=rand()%BS;
+    int slots = 0;
 
-        if (!bd[r][c])
-        {
-            if (rand()%10)
-                tile=2;
-            else
-                tile=4;
-            bd[r][c]=tile;
-            return;
-        }
-    }
+    srand((unsigned) time(&seed));
+    for (r = 0; r < BS; ++r)    /* counting available slots */
+        for (c = 0; c < BS; ++c)
+            if (0 == bd[r][c])
+                ++slots;
+    
+    tile = rand() % slots;
+    
+    for (r = 0; r < BS; ++r)    /* adding the tile */
+        for (c = 0; c < BS; ++c)
+            if (0 == bd[r][c])
+            {
+                if (0 == tile)
+                {
+                    if(rand()%10)
+                        bd[r][c] = 2;
+                    else
+                        bd[r][c] = 4;
+                    return;
+                }
+                else
+                    --tile;
+            }
 }
 
 /* ---------------------------------------------------------------------- */
