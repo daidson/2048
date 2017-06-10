@@ -133,7 +133,8 @@ void print(int bd[BS][BS])
             printf("|%s", uscr);
         printf("|\n");
     }
-    
+    free(uscr);
+
     return;
 }
 
