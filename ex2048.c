@@ -97,16 +97,40 @@ void addtile(int bd[BS][BS])
 /* print the board */
 void print(int bd[BS][BS])
 {
-    int line=0, column=0;
+    int r,c,i;
+    int align=ceil(log10(pow(2,(1+BS*BS))));  /* 2^(BS*BS+1) is the highest tile number possible 
+                                                * 1+ceil(log10(n)) converts that to the number of
+                                                * columns needed to print it correctly centered
+                                                */
+    int width;
+    char* uscr= malloc(sizeof(char)*(1+align));/* underscores set for table formatting */
+    uscr[0] = '\0';                            /* these are purely cosmetic */
+    for(i = 0; i < align; ++i)
+        strcat(uscr, "_");
 
-    for(line=0; line<BS; ++line)
+    for(c = 0; c < BS; ++c)
+        printf(" %s", uscr);
+    printf(" \n");
+
+    for(r = 0; r < BS; ++r)
     {
-        for(column=0; column<BS; ++column)
-            if (bd[line][column])
-                printf("|\t%d\t ", bd[line][column]);
-            else
-                printf("|\t  \t ");
+        for(c = 0; c < BS; ++c)
+            printf("|%*s", align,"");
+        printf("|\n");
         
+        for(c = 0; c < BS; ++c)
+            if (bd[r][c])
+            {
+                width =ceil(log10(bd[r][c]));  /* columns taken up by the tile */
+                printf("|%*s%d%*s", (align-width)/2, "", bd[r][c], ((align-width)/2+(align-width)%2), "");
+            }
+            else
+                printf("|%*s", align,"");
+        
+        printf("|\n");
+
+        for(c = 0; c < BS; ++c)
+            printf("|%s", uscr);
         printf("|\n");
     }
     
