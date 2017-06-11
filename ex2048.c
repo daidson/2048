@@ -261,7 +261,6 @@ char getmove(int bd[BS][BS])
                 break;
         }
 
-        /*printf("Invalid Input.\n");*/
         char invalid[] = "Invalid Input.";
         int invlgt = strlen(invalid);
 
@@ -488,11 +487,6 @@ void goodbye(int score)
         printf("%*s%s%d\n", (align*BS-scrlgt)/2,"", scrmsg, scrlg);
     else
         printf("%s%d\n", scrmsg, score);
-    /*  Old goodbye message below
-    printf("No moves left: You lose!\n");
-    printf("Score: %d\n", score);
-    printf("Try again later.\n");
-    */
     return;
 }
 
