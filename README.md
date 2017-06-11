@@ -12,6 +12,41 @@ A pontuação é dada pela soma do valor de todos os blocos fundidos durante o j
 
 O programa sempre exibe os movimentos possíveis. Ao digitar uma das letras exibidas (possibilidades: udlr), o jogo executa o movimento. Movimentos inválidos retornam erro. O programa ignora caracteres após o primeiro e limpa o buffer de entrada a cada leitura.
 
+* Ao iniciar o jogo, são escolhidos aleatoriamente duas posições onde são adicionados valores (90% de chance para 2 e 10% para 4):
+```
+Welcome to the 2048 - Azaleia game!
+
+
+   .      .      .      .
+
+
+   .      .      2      .
+
+
+   .      .      .      .
+
+
+   .      .      2      .
+
+Valid moves:udlr.
+Next move:d
+```
+* Neste casoo usuário realizou o moviento d (down) e a impressão seguinte do jogo foi:
+```
+   .      .      .      .
+
+
+   .      .      .      .
+   
+   
+   .      .      .      .
+   
+   
+   .      .      4      2
+Valid moves:ul.
+Next move:
+```
+
 ### Orientação
 
 * Autor: Prof. Dr. Ruben Carlo Benante
