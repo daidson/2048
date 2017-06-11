@@ -1,5 +1,5 @@
 /***************************************************************************
- *   ex2048.h                                 Version 20170606.201555      *
+ *   ex2048.h                                 Version 20170610.221324      *
  *                                                                         *
  *   The 2048 game library                                                 *
  *   Copyright (C) 2017         by Group Azaleia                           *
@@ -51,8 +51,8 @@
  * \ingroup Group Azaleia
  * \brief The 2048 game library
  * \details This program really do a nice job as a template, and template only!
- * \version 20170606.201555
- * \date 2017-06-06
+ * \version 20170610.221324
+ * \date 2017-06-10
  * \author Ruben Carlo Benante <<rcb@beco.cc>>
  * \par Webpage
  * <<a href="www.beco.cc">www.beco.cc</a>>
@@ -110,8 +110,8 @@
 /* ---------------------------------------------------------------------- */
 /* definitions */
 
-#ifndef VERSION /* gcc -DVERSION="1.0.160612.142628" */
-#define VERSION "20170606.201555" /**< Version Number (string) */
+#ifndef VERSION /* gcc -DVERSION="2.0.170610.221324" */
+#define VERSION "20170610.221324" /**< Version Number (string) */
 #endif
 
 /* Debug */
