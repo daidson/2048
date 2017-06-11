@@ -64,7 +64,7 @@ void welcome(void)
     printf("\e[f\e[J"); /* clear screen */
     
     if(1 < ((align*BS) - wellgt))
-        printf("%*s%s\n",align*BS/2-wellgt/2,"",welcm);
+        printf("%*s%s\n",(align*BS-wellgt)/2,"",welcm);
     else
         printf("%s\n",welcm);
     return;
@@ -176,33 +176,54 @@ char getmove(int bd[BS][BS])
     char vald = 0;
     char vall = 0;
     char valr = 0;
+    int align=1+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
 
-    printf("Valid moves:");
+    char valmsg[80] = "Valid moves: ";
+    int vallgt;
+
     if(validmove('u',bd))
     {
         valu = 1;
-        putchar('u');
+        strcat(valmsg,"u");
     }
     if(validmove('d',bd))
     {
         vald = 1;
-        putchar('d');
+        strcat(valmsg,"d");
     }
     if(validmove('l',bd))
     {
         vall = 1;
-        putchar('l');
+        strcat(valmsg,"l");
     }
     if(validmove('r',bd))
     {
         valr = 1;
-        putchar('r');
+        strcat(valmsg,"r");
     }
-    printf(".\n");
     
     if (!(valu||vald||vall||valr))
+    {
+        strcat(valmsg,"None.");
+        vallgt = strlen(valmsg);
+        if(1 < align*BS-vallgt)
+            printf("%*s%s\n",(align*BS-vallgt)/2,"",valmsg);
+        else
+            printf("%s\n",valmsg);
         return '\0';
-    printf("Next move:");
+    }
+
+    vallgt = strlen(valmsg);
+    if(1 < align*BS-vallgt)
+        printf("%*s%s\n",(align*BS-vallgt)/2,"",valmsg);
+    else
+        printf("%s\n",valmsg);
+    
+    if(1 < align*BS-11) /* this 10-char string+1 */
+        printf("%*s%s",(align*BS-11)/2,"","Next move:");
+    else
+        printf("Next move:");
+    
     while(1)
     {
         in=getchar();
