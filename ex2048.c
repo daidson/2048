@@ -57,7 +57,7 @@
 /* print a welcome message */
 void welcome(void)
 {
-    printf("\e[f\eJ");
+    printf("\e[f\e[J");
     printf("Welcome to the 2048 - Azaleia game!\n\n");
     return;
 }
