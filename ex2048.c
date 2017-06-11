@@ -268,6 +268,7 @@ char getmove(int bd[BS][BS])
             printf("%*s%s\n", (align*BS-invlgt)/2,"", invalid);
         else
             printf("%s\n", invalid);
+        printf("\e[%dC", align*BS/2);
     }
     
 }
