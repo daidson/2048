@@ -466,12 +466,22 @@ void goodbye(int score)
 {
     int align=1+ceil(log10(pow(2,(1+BS*BS))));  /* taken from print */
     char gdb[] = "No moves left! You lose!\n";
-    int gdbgt = strlen(gdb);
+    int gdblgt = strlen(gdb);
+    /*gdbgt += (int)ceil(log10(score));*/
+    char scrmsg[]= "Score:";
+    int scrlgt = strlen(scrmsg);
+    int scrlg;
+    scrlg = /*scrlgt +*/ (int)ceil(log10(score)); /* score length size plus the score */
 
-    if(1 < (align*BS - gdbgt))
-        printf("%*s%sScore:%d\n", (align*BS-gdbgt)/2,"",gdb, ((int)ceil(log10(score)+gdbgt)));
+    if(1 < (align*BS - gdblgt))
+        printf("%*s%s\n", (align*BS-gdblgt)/2,"",gdb) /*, scrmsg, (align*BS-scrlgt)/2,"", scrlg)*/;
     else
         printf("%s\n",gdb);
+
+    if(1 < (align*BS - scrlgt))
+        printf("%*s%s%d\n", (align*BS-scrlgt)/2,"", scrmsg, scrlg);
+    else
+        printf("%s\n",scrmsg);
     /*
     printf("No moves left: You lose!\n");
     printf("Score: %d\n", score);
