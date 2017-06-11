@@ -31,7 +31,7 @@ Welcome to the 2048 - Azaleia game!
 Valid moves:udlr.
 Next move:d
 ```
-* Neste casoo usuário realizou o moviento d (down) e a impressão seguinte do jogo foi:
+* Neste caso o usuário realizou o moviento d (down) e a impressão seguinte do jogo foi:
 ```
    .      .      .      .
 
@@ -43,9 +43,13 @@ Next move:d
    
    
    .      .      4      2
+
 Valid moves:ul.
 Next move:
 ```
+* **Compilação:** Para compilar o jogo, pode-se utilizar um dos comandos abaixo:
+  * make ex2048.x SRC=exmain2048.c MAJOR=2 MINOR=1 DEBUG=0
+  * gcc -Wall -Wextra -std=gnu99 -fdiagnostics-color=always -Ofast -DVERSION="\"2.1.170611.090824\"" -DBUILD="\"170611.090824\"" -DDEBUG=0 -DD_ -D_FORTIFY_SOURCE=1 -Wl,--defsym,BUILD_170611_090824=0 -lm -lpthread -lncurses -lcurl ex2048.c exmain2048.c -o ex2048.x 2>&1 | tee errors.err
 
 ### Orientação
 
