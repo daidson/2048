@@ -264,7 +264,7 @@ char getmove(int bd[BS][BS])
                 break;
         }
 
-        
+        printf("\e[2A\e[J");
 
         if(1 < (align*BS-invlgt))
             printf("%*s%s\n", (align*BS-invlgt)/2,"", invalid);
