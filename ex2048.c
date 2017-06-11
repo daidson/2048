@@ -261,7 +261,14 @@ char getmove(int bd[BS][BS])
                 break;
         }
 
-        printf("Invalid Input.\n");
+        /*printf("Invalid Input.\n");*/
+        char invalid[] = "Invalid Input.";
+        int invlgt = strlen(invalid);
+
+        if(1 < (align*BS-invlgt))
+            printf("%*s%s\n", (align*BS-invlgt)/2,"", invalid);
+        else
+            printf("%s\n", invalid);
     }
     
 }
