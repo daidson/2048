@@ -181,6 +181,9 @@ char getmove(int bd[BS][BS])
     char valmsg[80] = "Valid moves: ";
     int vallgt;
 
+    char invalid[] = "Invalid Input.";
+    int invlgt = strlen(invalid);
+
     if(validmove('u',bd))
     {
         valu = 1;
@@ -261,8 +264,7 @@ char getmove(int bd[BS][BS])
                 break;
         }
 
-        char invalid[] = "Invalid Input.";
-        int invlgt = strlen(invalid);
+        
 
         if(1 < (align*BS-invlgt))
             printf("%*s%s\n", (align*BS-invlgt)/2,"", invalid);
