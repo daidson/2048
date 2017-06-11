@@ -202,19 +202,31 @@ char getmove(int bd[BS][BS])
         {
             case 'u':
                 if (valu)
+                {
+                    printf("\e[f\e[J");
                     return 'u';
+                }
                 break;
             case 'd':
                 if (vald)
+                {
+                    printf("\e[f\e[J");
                     return 'd';
+                }
                 break;
             case 'l':
                 if (vall)
+                {
+                    printf("\e[f\e[J");
                     return 'l';
+                }
                 break;
             case 'r':
                 if (valr)
+                {
+                    printf("\e[f\e[J");
                     return 'r';
+                }
                 break;
         }
 
