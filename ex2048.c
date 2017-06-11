@@ -57,8 +57,16 @@
 /* print a welcome message */
 void welcome(void)
 {
-    printf("\e[f\e[J");
-    printf("Welcome to the 2048 - Azaleia game!\n\n");
+    int align=1+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
+    char welcm[] = "2048 - Azaleia";
+    int wellgt = strlen(welcm);
+
+    printf("\e[f\e[J"); /* clear screen */
+    
+    if(1 < ((align*BS) - wellgt))
+        printf("%*s%s\n",align*BS/2-wellgt/2,"",welcm);
+    else
+        printf("%s\n",welcm);
     return;
 }
 
