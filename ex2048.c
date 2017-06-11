@@ -167,7 +167,7 @@ char getmove(int bd[BS][BS])
     char vall = 0;
     char valr = 0;
 
-    printf("Next move (");
+    printf("Valid moves:");
     if(validmove('u',bd))
     {
         valu = 1;
@@ -188,11 +188,11 @@ char getmove(int bd[BS][BS])
         valr = 1;
         putchar('r');
     }
-    printf("): \n");
+    printf(".\n");
     
     if (!(valu||vald||vall||valr))
         return '\0';
-
+    printf("Next move:");
     while(1)
     {
         in=getchar();
