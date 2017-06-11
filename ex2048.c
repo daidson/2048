@@ -469,7 +469,7 @@ void goodbye(int score)
     int gdbgt = strlen(gdb);
 
     if(1 < (align*BS - gdbgt))
-        printf("%*s%s\nScore:%f\n", (align*BS-gdbgt)/2,"",gdb, (ceil(log10(score)+gdbgt)));
+        printf("%*s%sScore:%d\n", (align*BS-gdbgt)/2,"",gdb, ((int)ceil(log10(score)+gdbgt)));
     else
         printf("%s\n",gdb);
     /*
