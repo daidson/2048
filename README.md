@@ -4,7 +4,7 @@
 
 Versão em c, para terminal, do jogo 2048.
 
-Este programa é uma adaptação do famoso jogo 2048 para consoles. O usuário insere um comando para a direção que deseja mover os blocos, e o jogo exibe o novo tabuleiro. O jogo só aceita entradas de movimentos válidos, e ao detectar que não há mais nenhum movimento válido, automaticamente encerra, exibindo a pontuação alcançada.
+Este programa é uma adaptação do famoso jogo 2048 para consoles. O usuário insere um comando para a direção que deseja mover os blocos, e o jogo exibe o novo tabuleiro. O jogo só aceita entradas de movimentos válidos, e, ao detectar que não há mais nenhum movimento válido, automaticamente encerra, exibindo a pontuação alcançada.
 
 A pontuação é dada pela soma do valor de todos os blocos fundidos durante o jogo.
 
@@ -28,10 +28,10 @@ Welcome to the 2048 - Azaleia game!
 
    .      .      2      .
 
-Valid moves:udlr.
-Next move:d
+    Valid moves:udlr
+      Next move:d
 ```
-* Neste caso o usuário realizou o moviento d (down) e a impressão seguinte do jogo foi:
+* Neste caso o usuário realizou o movimento 'd' (down) e a impressão seguinte do jogo foi:
 ```
    .      .      .      .
 
@@ -44,8 +44,25 @@ Next move:d
    
    .      .      4      2
 
-Valid moves:ul.
-Next move:
+    Valid moves:ul
+      Next move:d
+```
+Caso haja a entrada de um movimento inválido, como no exemplo acima, o programa retorna 'Invalid Input' e pede para que haja outra entrada, com um movimento válido.
+```
+   .      .      .      .
+
+
+   .      .      .      .
+   
+   
+   .      .      .      .
+   
+   
+   .      .      4      2
+
+    Valid moves:ul
+      Next move:d
+    Invalid Input.
 ```
 * **Compilação:** Para compilar o jogo, pode-se utilizar um dos comandos abaixo:
   * make ex2048.x SRC=exmain2048.c MAJOR=2 MINOR=1 DEBUG=0
@@ -55,6 +72,15 @@ Next move:
 
 * Autor: Prof. Dr. Ruben Carlo Benante
 * Email: rcb@upe.br
-* Data: 2017-06-10
-* Licença: GNU/GPL v2.0
+* Data: 2017-06-11
 
+### Alunos
+
+* Bernardo de Azevedo Moreira             | bernardo.az.moreira@gmail.com   | https://github.com/BAMoreira      |
+* Daidson Fonseca Alves                   | daidson.alves@gmail.com         | https://github.com/daidson        |
+* Douglas Azevedo Pereira Dantas          | douglasazevedo839@gmail.com     | https://github.com/DodoAz         |
+* Maria Eduarda Azevedo Saraiva de Moraes | eduardasaraivam@gmail.com       | https://github.com/eduardasaraiva |
+
+### Licença
+
+* GNU/GPL v2.0
