@@ -97,43 +97,62 @@ void addtile(int bd[BS][BS])
 /* print the board */
 void print(int bd[BS][BS])
 {
-    int r,c,i;
+    int r,c;
     int align=ceil(log10(pow(2,(1+BS*BS))));  /* 2^(BS*BS+1) is the highest tile number possible 
                                                 * 1+ceil(log10(n)) converts that to the number of
                                                 * columns needed to print it correctly centered
                                                 */
     int width;
-    char* uscr= malloc(sizeof(char)*(1+align));/* underscores set for table formatting */
-    uscr[0] = '\0';                            /* these are purely cosmetic */
-    for(i = 0; i < align; ++i)
-        strcat(uscr, "_");
-
-    for(c = 0; c < BS; ++c)
-        printf(" %s", uscr);
-    printf(" \n");
+    int color;
 
     for(r = 0; r < BS; ++r)
     {
         for(c = 0; c < BS; ++c)
-            printf("|%*s", align,"");
-        printf("|\n");
+        {
+            if(bd[r][c])
+            {
+                if(log2(bd[r][c]) < 7)
+                    color = 47 - (int) log2(bd[r][c]);
+                else
+                    color = 41;
+         
+                printf("\e[%d;30m%*s\e[0m",color,align,"");
+            }
+            else
+                printf("\e[47;30m%*s\e[0m",align,"");
+        }
+        printf("\n");
         
         for(c = 0; c < BS; ++c)
             if (bd[r][c])
             {
+                if(log2(bd[r][c]) < 7)
+                    color = 47 - (int) log2(bd[r][c]);
+                else
+                    color = 41;
+
                 width =ceil(log10(bd[r][c]));  /* columns taken up by the tile */
-                printf("|%*s%d%*s", (align-width)/2, "", bd[r][c], ((align-width)/2+(align-width)%2), "");
+                printf("\e[%d;30m%*s%d%*s\e[0m",color, (align-width)/2, "", bd[r][c], ((align-width)/2+(align-width)%2), "");
             }
             else
-                printf("|%*s", align,"");
+                printf("\e[47;30m%*s%*s\e[0m", align/2,".",align/2+align%2,"");
         
-        printf("|\n");
+        printf("\n");
 
         for(c = 0; c < BS; ++c)
-            printf("|%s", uscr);
-        printf("|\n");
+            if(bd[r][c])
+            {
+                if(log2(bd[r][c]) < 7)
+                    color = 47 - (int) log2(bd[r][c]);
+                else
+                    color = 41;
+         
+                printf("\e[%d;30m%*s\e[0m",color,align,"");
+            }
+            else
+                printf("\e[47;30m%*s\e[0m",align,"");
+        printf("\n");
     }
-    free(uscr);
 
     return;
 }
