@@ -464,9 +464,19 @@ int applyup(int bd[BS][BS])
 /* print the goodbye message and congratulations on the score */
 void goodbye(int score)
 {
+    int align=1+ceil(log10(pow(2,(1+BS*BS))));  /* taken from print */
+    char gdb[] = "No moves left! You lose!\n";
+    int gdbgt = strlen(gdb);
+
+    if(1 < (align*BS - gdbgt))
+        printf("%*s%s\nScore:%f\n", (align*BS-gdbgt)/2,"",gdb, (ceil(log10(score)+gdbgt)));
+    else
+        printf("%s\n",gdb);
+    /*
     printf("No moves left: You lose!\n");
     printf("Score: %d\n", score);
     printf("Try again later.\n");
+    */
     return;
 }
 
