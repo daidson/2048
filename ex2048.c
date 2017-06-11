@@ -57,6 +57,8 @@
 /* print a welcome message */
 void welcome(void)
 {
+    printf("\e[f\eJ");
+    printf("Welcome to the 2048 - Azaleia game!\n\n");
     return;
 }
 
@@ -68,7 +70,7 @@ void addtile(int bd[BS][BS])
     int r, c, tile;
     int slots = 0;
 
-    srand((unsigned) time(&seed));
+    srand((unsigned) time(&seed));  /* srand() left here for more randomness */
     for (r = 0; r < BS; ++r)    /* counting available slots */
         for (c = 0; c < BS; ++c)
             if (0 == bd[r][c])
