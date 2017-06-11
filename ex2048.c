@@ -116,10 +116,10 @@ void print(int bd[BS][BS])
                 else
                     color = 41;
          
-                printf("\e[%d;30m%*s\e[0m",color,align,"");
+                printf("\e[%d;30m%*s\e[0m",color,align+1,"");
             }
             else
-                printf("\e[47;30m%*s\e[0m",align,"");
+                printf("\e[47;30m%*s\e[0m",align+1,"");
         }
         printf("\n");
         
@@ -132,10 +132,10 @@ void print(int bd[BS][BS])
                     color = 41;
 
                 width =ceil(log10(bd[r][c]));  /* columns taken up by the tile */
-                printf("\e[%d;30m%*s%d%*s\e[0m",color, (align-width)/2, "", bd[r][c], ((align-width)/2+(align-width)%2), "");
+                printf("\e[%d;30m%*s%d%*s\e[0m",color, (align-width)/2+(align-width)%2, "", bd[r][c], (align-width)/2+1, "");
             }
             else
-                printf("\e[47;30m%*s%*s\e[0m", align/2,".",align/2+align%2,"");
+                printf("\e[47;30m%*s%*s\e[0m", align/2+1,".",align/2+align%2,"");
         
         printf("\n");
 
@@ -147,10 +147,10 @@ void print(int bd[BS][BS])
                 else
                     color = 41;
          
-                printf("\e[%d;30m%*s\e[0m",color,align,"");
+                printf("\e[%d;30m%*s\e[0m",color,align+1,"");
             }
             else
-                printf("\e[47;30m%*s\e[0m",align,"");
+                printf("\e[47;30m%*s\e[0m",align+1,"");
         printf("\n");
     }
 
