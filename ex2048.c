@@ -478,8 +478,7 @@ void goodbye(int score)
     int gdblgt = strlen(gdb);
     char scrmsg[]= "Score:";
     int scrlgt = strlen(scrmsg);
-    int scrlg;
-    scrlg = (int)ceil(log10(score)); /* score length size plus the score */
+    int scrlg = (int)ceil(log10(score)); /* score length size plus the score */
 
     if(1 < (align*BS - gdblgt))
         printf("%*s%s\n", (align*BS-gdblgt)/2,"", gdb);
@@ -487,7 +486,7 @@ void goodbye(int score)
         printf("%s\n", gdb);
 
     if(1 < (align*BS - scrlgt))
-        printf("%*s%s%d\n", (align*BS-scrlgt)/2,"", scrmsg, scrlg);
+        printf("%*s%s%d\n", (align*BS-scrlgt-scrlg)/2,"", scrmsg, score);
     else
         printf("%s%d\n", scrmsg, score);
     return;
