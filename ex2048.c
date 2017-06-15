@@ -478,15 +478,15 @@ void goodbye(int score)
     int gdblgt = strlen(gdb);
     char scrmsg[]= "Score:";
     int scrlgt = strlen(scrmsg);
-    int scrlg = (int)ceil(log10(score)); /* score length size plus the score */
+    int scrlg = scrlgt + (int)ceil(log10(score)); /* score length size plus the score */
 
     if(1 < (align*BS - gdblgt))
         printf("%*s%s\n", (align*BS-gdblgt)/2,"", gdb);
     else
         printf("%s\n", gdb);
 
-    if(1 < (align*BS - scrlgt))
-        printf("%*s%s%d\n", (align*BS-scrlgt-scrlg)/2,"", scrmsg, score);
+    if(1 < (align*BS - scrlg))
+        printf("%*s%s%d\n", (align*BS-scrlg)/2,"", scrmsg, score);
     else
         printf("%s%d\n", scrmsg, score);
     return;
@@ -557,9 +557,12 @@ int validleft(int bd[BS][BS])
 
             oldt = curnt;
             if(!bd[r][c])
+            {
                 for (i = c + 1; i < BS; i++)
                     if (bd[r][i])
                         return 1;
+                break;
+            }
         }
     }
     return 0;
@@ -583,9 +586,12 @@ int validright(int bd[BS][BS])
 
             oldt = curnt;
             if (!bd[r][c])
+            {
                 for (i = c - 1; i >= 0; i--)
                     if (bd[r][i])
                         return 1;
+                break;
+            }
         }
     }
     return 0;
@@ -609,9 +615,12 @@ int validup(int bd[BS][BS])
 
             oldt = curnt;
             if (!bd[r][c])
+            {
                 for (i = r + 1; i < BS; i++)
                     if (bd[i][c])
                         return 1;
+                break;
+            }
         }
     }
     return 0;
@@ -635,9 +644,12 @@ int validdown(int bd[BS][BS])
 
             oldt = curnt;
             if (!bd[r][c])
+            {
                 for (i = r - 1; i >= 0; i--)
                     if (bd[i][c])
                         return 1;
+                break;
+            }
         }
     }
     return 0;
