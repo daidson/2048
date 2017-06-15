@@ -230,7 +230,8 @@ char getmove(int bd[BS][BS])
     while(1)
     {
         in=getchar();
-        while((clean=getchar()) != '\n' && clean != EOF);
+        if(in != '\n')
+            while((clean=getchar()) != '\n' && clean != EOF);
         
         switch(in)
         {
