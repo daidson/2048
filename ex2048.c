@@ -121,11 +121,14 @@ void print(int bd[BS][BS])
         {
             if(bd[r][c])
             {
-                if(log2(bd[r][c]) < 7)
-                    color = 47 - (int) log2(bd[r][c]);
+                if(log2(bd[r][c])/2 < 7)
+                    if (1 & (int) log2(bd[r][c]))
+                        color = 47 - log2(bd[r][c])/2;
+                    else
+                        color = 107 - log2(bd[r][c])/2;
                 else
                     color = 41;
-         
+
                 printf("\e[%d;30m%*s\e[0m",color,align+1,"");
             }
             else
@@ -136,8 +139,11 @@ void print(int bd[BS][BS])
         for(c = 0; c < BS; ++c)
             if (bd[r][c])
             {
-                if(log2(bd[r][c]) < 7)
-                    color = 47 - (int) log2(bd[r][c]);
+                if(log2(bd[r][c])/2 < 7)
+                    if (1 & (int) log2(bd[r][c]))
+                        color = 47 - log2(bd[r][c])/2;
+                    else
+                        color = 107 - log2(bd[r][c])/2;
                 else
                     color = 41;
 
@@ -152,8 +158,11 @@ void print(int bd[BS][BS])
         for(c = 0; c < BS; ++c)
             if(bd[r][c])
             {
-                if(log2(bd[r][c]) < 7)
-                    color = 47 - (int) log2(bd[r][c]);
+                if(log2(bd[r][c])/2 < 7)
+                    if (1 & (int) log2(bd[r][c]))
+                        color = 47 - log2(bd[r][c])/2;
+                    else
+                        color = 107 - log2(bd[r][c])/2;
                 else
                     color = 41;
          
