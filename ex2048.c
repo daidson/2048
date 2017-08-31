@@ -186,6 +186,8 @@ char getmove(int bd[BS][BS])
     char vall = 0;
     char valr = 0;
     int align=1+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
+    char gdb[] = "No moves left! You lose!";
+    int gdblgt = strlen(gdb);
 
     char valmsg[80] = "Valid moves: ";
     int vallgt;
@@ -222,6 +224,12 @@ char getmove(int bd[BS][BS])
             printf("%*s%s\n",(align*BS-vallgt)/2,"",valmsg);
         else
             printf("%s\n",valmsg);
+        
+        if(1 < (align*BS - gdblgt))
+            printf("%*s%s\n", (align*BS-gdblgt)/2,"", gdb);
+        else
+            printf("%s\n", gdb);
+
         return '\0';
     }
 
@@ -271,6 +279,9 @@ char getmove(int bd[BS][BS])
                     printf("\e[f\e[J");
                     return 'r';
                 }
+                break;
+            case 'q':
+                return '\0';
                 break;
         }
 
@@ -484,16 +495,13 @@ int applyup(int bd[BS][BS])
 void goodbye(int score)
 {
     int align=1+ceil(log10(pow(2,(1+BS*BS))));  /* taken from print */
-    char gdb[] = "No moves left! You lose!";
-    int gdblgt = strlen(gdb);
     char scrmsg[]= "Score:";
     int scrlgt = strlen(scrmsg);
-    int scrlg = scrlgt + (int)ceil(log10(score)); /* score length size plus the score */
-
-    if(1 < (align*BS - gdblgt))
-        printf("%*s%s\n", (align*BS-gdblgt)/2,"", gdb);
+    int scrlg; /* score length size plus the score */
+    if(0 < score)   
+        scrlg = scrlgt + (int)ceil(log10(score));
     else
-        printf("%s\n", gdb);
+        scrlg = scrlgt;
 
     if(1 < (align*BS - scrlg))
         printf("%*s%s%d\n", (align*BS-scrlg)/2,"", scrmsg, score);
