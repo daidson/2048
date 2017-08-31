@@ -108,10 +108,11 @@ void addtile(int bd[BS][BS])
 void print(int bd[BS][BS])
 {
     int r,c;
-    int align=ceil(log10(pow(2,(1+BS*BS))));  /* 2^(BS*BS+1) is the highest tile number possible 
-                                                * 1+ceil(log10(n)) converts that to the number of
-                                                * columns needed to print it correctly centered
-                                                */
+    int align=2 + ceil(log10(pow(2,(1+BS*BS))));    /* 2^(BS*BS+1) is the highest tile number possible 
+                                                     * 1+ceil(log10(n)) converts that to the number of
+                                                     * columns needed to print it correctly centered
+                                                     * +2 for style
+                                                     */
     int width;
     int color;
 
@@ -121,13 +122,13 @@ void print(int bd[BS][BS])
         {
             if(bd[r][c])
             {
-                if(log2(bd[r][c])/2 < 7)
+                if(log2(bd[r][c])/2.0 <= 6)
                     if (1 & (int) log2(bd[r][c]))
                         color = 47 - log2(bd[r][c])/2;
                     else
                         color = 107 - log2(bd[r][c])/2;
                 else
-                    color = 41;
+                    color = 101;
 
                 printf("\e[%d;30m%*s\e[0m",color,align+1,"");
             }
@@ -139,16 +140,16 @@ void print(int bd[BS][BS])
         for(c = 0; c < BS; ++c)
             if (bd[r][c])
             {
-                if(log2(bd[r][c])/2 < 7)
+                if(log2(bd[r][c])/2.0 <= 6)
                     if (1 & (int) log2(bd[r][c]))
                         color = 47 - log2(bd[r][c])/2;
                     else
                         color = 107 - log2(bd[r][c])/2;
                 else
-                    color = 41;
+                    color = 101;
 
-                width =ceil(log10(bd[r][c]));  /* columns taken up by the tile */
-                printf("\e[%d;30m%*s%d%*s\e[0m",color, (align-width)/2+(align-width)%2, "", bd[r][c], (align-width)/2+1, "");
+                width = ceil(log10(bd[r][c]));  /* columns taken up by the tile */
+                printf("\e[%d;30m%*s%d%*s\e[0m",color, (align-width)/2+1, "", bd[r][c], (align-width)/2+(align-width)%2, "");
             }
             else
                 printf("\e[47;30m%*s%*s\e[0m", align/2+1,".",align/2+align%2,"");
@@ -158,13 +159,13 @@ void print(int bd[BS][BS])
         for(c = 0; c < BS; ++c)
             if(bd[r][c])
             {
-                if(log2(bd[r][c])/2 < 7)
+                if(log2(bd[r][c])/2.0 <= 6)
                     if (1 & (int) log2(bd[r][c]))
                         color = 47 - log2(bd[r][c])/2;
                     else
                         color = 107 - log2(bd[r][c])/2;
                 else
-                    color = 41;
+                    color = 101;
          
                 printf("\e[%d;30m%*s\e[0m",color,align+1,"");
             }
