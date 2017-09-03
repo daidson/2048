@@ -128,7 +128,9 @@
 #define IFDEBUG(M) if(DEBUG) fprintf(stderr, "[DEBUG file:%s line:%d]: " M "\n", __FILE__, __LINE__); else {;}
 
 /* limits */
+#ifndef BS
 #define BS 4 /**< board size */
+#endif
 
 /* ---------------------------------------------------------------------- */
 /* prototypes */
