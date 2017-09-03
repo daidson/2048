@@ -57,7 +57,7 @@
 /* print a welcome message */
 void welcome(void)
 {
-    int align=1+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
+    int align=3+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
     char welcm[] = "2048 - Azaleia";
     int wellgt = strlen(welcm);
 
@@ -108,11 +108,11 @@ void addtile(int bd[BS][BS])
 void print(int bd[BS][BS])
 {
     int r,c;
-    int align=2 + ceil(log10(pow(2,(1+BS*BS))));    /* 2^(BS*BS+1) is the highest tile number possible 
-                                                     * 1+ceil(log10(n)) converts that to the number of
-                                                     * columns needed to print it correctly centered
-                                                     * +2 for style
-                                                     */
+    int align=2+ceil(log10(pow(2,(1+BS*BS))));    /* 2^(BS*BS+1) is the highest tile number possible 
+                                                   * 1+ceil(log10(n)) converts that to the number of
+                                                   * columns needed to print it correctly centered
+                                                   * +2 for style
+                                                   */
     int width;
     int color;
 
@@ -186,7 +186,7 @@ char getmove(int bd[BS][BS])
     char vald = 0;
     char vall = 0;
     char valr = 0;
-    int align=1+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
+    int align=3+ceil(log10(pow(2,(1+BS*BS)))); /* taken from print() */
     char gdb[] = "No moves left! You lose!";
     int gdblgt = strlen(gdb);
 
@@ -495,7 +495,7 @@ int applyup(int bd[BS][BS])
 /* print the goodbye message and congratulations on the score */
 void goodbye(int score)
 {
-    int align=1+ceil(log10(pow(2,(1+BS*BS))));  /* taken from print */
+    int align= 3 + (int) ceil(log10(pow(2,(1+BS*BS))));  /* taken from print */
     char scrmsg[]= "Score:";
     int scrlgt = strlen(scrmsg);
     int scrlg; /* score length size plus the score */
